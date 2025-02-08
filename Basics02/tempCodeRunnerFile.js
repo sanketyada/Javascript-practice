@@ -1,1 +1,1 @@
-addfun(12,23)
+detail()
