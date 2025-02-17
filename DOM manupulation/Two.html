@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manupulation</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+      <div class="day">Friday</div>
+    </div>
+  </body>
+  <script>
+    let parent=document.querySelector('.parent');
+    //accessing Parent
+    console.log(parent)
+    //first and last child
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+    //accessing children through parent
+    console.log(parent.children)  //it give HTMLCollection
+    //and manupulate desired children
+    console.log(parent.children[4].innerText)
+
+    //manupuate all children
+    for (let i = 0; i < parent.children.length;i++){
+        console.log(parent.children[i].innerText);
+    }
+
+    //Accessing Child
+    let child=document.querySelector(".day") //selected only first child
+    console.log(child)
+    //accessing parent through childname
+    console.log(child.parentElement)
+    //acceesing sibling name
+    console.log(child.nextElementSibling)
+
+    //Nodes
+    console.log("Nodes",parent.childNodes)
+  </script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+        <li>Python</li>
+    </ul>
+</body>
+<script>
+    //Adding New Heading to page
+    let Head=document.createElement('h1')
+    Head.textContent="MY DAILY WORKSPACE"
+    document.body.appendChild(Head)
+
+    //Normal Methood
+    let list=function(text){
+        let li=document.createElement('li')
+        li.innerText=text
+        let ul=document.querySelector('.language')
+        ul.appendChild(li)
+    }
+
+    
+    //Best Methood(optimized)
+    function List(text){
+        let li=document.createElement('li')
+        let textNode=document.createTextNode(text)
+        li.appendChild(textNode)
+        let ul=document.querySelector('ul')
+        ul.appendChild(li);
+    }
+    List("Sanket")
+    List("Rajkumar")
+
+
+    //Replacing
+    const secondElement=document.querySelector('li:nth-child(2)')
+    console.log(secondElement)  //---> <li>Python</li>
+    let li=document.createElement('li')
+    li.textContent="Rajesh"
+    secondElement.replaceWith(li)
+
+    const firstLang=document.querySelector('li')
+    //let n=document.createElement('li')
+    //n.innerText="Snaket"
+    //firstLang.replaceWith(n)
+    firstLang.outerHTML="<li>Snaket Yadavshgwqdv</li>"
+
+    //Remove
+    let newli=document.querySelector('li:first-child')
+    newli.remove()
+</script>
+</html>

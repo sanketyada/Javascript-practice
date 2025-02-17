@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding new Element</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    let Head=document.createElement('h1');
+    Head.className="heading"
+    Head.id=Math.floor(Math.random()*10+1)
+    Head.style.backgroundColor="teal";
+    Head.style.padding="12px"
+    Head.setAttribute('placeholder','title')
+    //Head.innerText="Jai Shree Ram"
+    const text=document.createTextNode("Jai Shree Ram ji")
+    Head.append(text)
+    document.body.append(Head)
+    let body=document.querySelector('body')
+    console.log(body)
+</script>
+</html>

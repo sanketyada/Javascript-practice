@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editing and Removing Element</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <ul></ul>
+  </body>
+  <script>
+    let Head = function (text) {
+      let h = document.createElement("h1");
+      h.innerText = text;
+      let body = document.querySelector("body");
+      body.appendChild(h);
+    };
+    let div = function (text) {
+      let div = document.createElement("div");
+      div.className = text;
+      let body = document.querySelector("body");
+      body.appendChild(div);
+    };
+    let fun = function (text) {
+      let ul = document.querySelector("ul");
+      let li = document.createElement("li");
+      let t = document.createTextNode(text);
+      li.append(t);
+      ul.appendChild(li);
+    };
+    const body = document.querySelector("body");
+    console.log(body);
+  </script>
+</html>
