@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: rgb(51, 50, 50);
+            text-align: center;
+        }
+        body{
+            text-align: center;
+        }
+        span{
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border: 1px solid rgb(230, 226, 226);
+        }
+        #red{
+            background-color: red;
+        }
+        #green{
+            background-color: green;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #black{
+            background-color: black;
+        }
+        #white{
+            background-color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1> Select Your Favorite Color </h1>
+    <span class="box" id="red"></span>
+    <span class="box" id="green"></span>
+    <span class="box" id="blue"></span>
+    <span class="box" id="black"></span>
+    <span class="box" id="white"></span>
+    <h2>HERE IS YOUR SELECTED COLOR:</h2>
+    <p></p>
+</body>
+<script>
+    let body=document.querySelector('body')
+
+    function Head(Text){
+    let Head=document.createElement('h3')
+    Head.innerText=Text
+    body.appendChild(Head)
+    }
+
+    function span(text){
+        let span=document.createElement('span')
+        span.style.backgroundColor=text;
+        span.style.display="inline-block";
+        body.appendChild(span)
+    }
+
+    function counter(num){
+        let p=document.querySelector('p')
+        p.innerText=`Counter ${num}`
+    }
+
+    let i=0
+    let allcolor=document.querySelectorAll('.box')
+    allcolor.forEach((item)=>{
+       item.addEventListener('click',(item)=>{
+        span(item.target.id)
+        Head(`You selected ${item.target.id.toUpperCase()}`)
+        counter(i)
+        i=i+1
+       })
+    })
+</script>
+</html>
