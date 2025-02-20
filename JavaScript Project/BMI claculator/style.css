@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(84, 84, 174);
+  }
+  h1 {
+    text-align: center;
+  }
+  form{
+    text-align: center;
+  }
+  button{
+    text-align: center;
+    margin-left: 50px;
+    padding: 5px ;
+  }
+  li{
+    list-style: none;
+  }
