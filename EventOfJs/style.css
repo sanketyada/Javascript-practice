@@ -1,0 +1,16 @@
+body{
+    background-color: grey;
+    text-align: center;
+}
+ul{
+
+}
+li{
+    list-style: none;
+}
+li img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 10px;
+}
