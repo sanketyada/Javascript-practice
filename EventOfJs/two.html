@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        button{
+            padding: 10px 20px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sanket Yadav</h1>
+    <button id="Start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    let raaj=setTimeout(()=>{
+        let h1=document.querySelector('h1')
+        h1.innerHTML="Aman"
+    },2000);
+
+    let Stop= document.querySelector('#stop')
+    Stop.addEventListener('click',()=>{
+        clearTimeout(raaj)
+    })
+    let Start= document.querySelector('#Start')
+    Start.addEventListener('click',()=>{
+        setTimeout(()=>{
+            let h1=document.querySelector('h1')
+            h1.innerHTML="Aman"
+        },2000);
+    })
+    
+
+</script>
+</html>

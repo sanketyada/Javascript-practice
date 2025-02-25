@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THREE</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        button{
+            padding: 10px 20px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sanket</h1>
+    <button id="Start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    let saydate=function (str){
+      console.log(str)
+    }
+
+    let btn1=document.querySelector('#Start') 
+    let btn=document.querySelector('#stop')
+
+    let interval;
+
+    btn1.addEventListener('click',()=>{
+        if(!interval){
+             interval=setInterval(saydate,1000,"Sanket")
+        }
+    })
+    
+
+   
+
+    btn.addEventListener('click',()=>{
+        clearInterval(interval)
+        interval = null; 
+    })
+
+</script>
+</html>
