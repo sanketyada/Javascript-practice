@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sanket Yadav</h1>
+  </body>
+  <script>
+    //request Url
+    const requestUrl = 'https://api.github.com/users/sanketyada';
+
+    const xhr = new XMLHttpRequest(); //Setup request
+
+    xhr.open("GET", requestUrl); //sending Get request
+
+    //for accepting data from request
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        let data =JSON.parse(this.responseText);
+        console.log(typeof data);
+        console.log(data)
+        console.log("UserName: "+data.login)
+        console.log("Name: "+data.name)
+
+      }
+    };
+    xhr.send(); //Sending Request
+  </script>
+</html>

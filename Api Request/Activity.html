@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <style>
+        body{
+            background-color: greenyellow;
+            align-items: center;
+        }
+        #Container{
+            align-items: center;
+            background-color: red;
+            height: 300px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        img{
+            width: 100%;
+            border-radius: 10px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="Container">
+        <img src="" id="image" alt="">
+        <h3 id="name"></h3>
+        <p></p>
+    </div>
+    <button id="btn">Show me</button>
+    
+</body>
+<script>
+
+    let btn=document.getElementById('btn');
+    btn.addEventListener('click',()=>{
+    let requestUrl='https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("GET",requestUrl)
+
+    xhr.onreadystatechange=function (){
+        console.log(xhr.readyState)
+        if(xhr.readyState ===4){
+            let data=JSON.parse(this.responseText);
+            //console.log(data)
+            //console.log(data.avatar_url)
+            //console.log(data.followers)
+            let img=document.querySelector('img')
+            img.src=data.avatar_url
+            let h3=document.querySelector('h3');
+            h3.innerText=data.name
+            let p=document.querySelector('p');
+            p.innerHTML=`Followers: ${data.followers}`
+        }
+    }
+
+    xhr.send();
+
+});
+</script>
+</html>
